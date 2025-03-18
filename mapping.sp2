@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<session version="0.1.9" uuid="2e302d919b834cf18f11835c693084d0" currentSet="92e1fcf38e1d43898813238f00cc1e9d"
+         displayedSet="92e1fcf38e1d43898813238f00cc1e9d" name="ThreeZones"
+         unfolded="footerOpened" displayRear="edit" hwOutputsPanelWidth="419">
+  <globalSet colour="ff4eadea" mainColour="ff4e4f7a" secondaryColour="ff666af2"
+             fillAll="1" armrecord="1" uuid="04d13434dd20489dbdb9e9b16368c2f0">
+    <mixBus outputs="analog1" uuid="f798243d66e942da976c717a24aa0423"/>
+    <mixBus outputs="analog2" uuid="c968309407294c11968d7090f7e1c0f9"/>
+    <mixBus outputs="analog3" uuid="6c5f224ebb354dea998273dabb638987"/>
+    <mixBus outputs="analog4" uuid="c0f727179ce94755a97fefa554e17499"/>
+    <mixBus outputs="analog5" uuid="387c80d9951f41518b741086a3b4095a"/>
+    <mixBus outputs="analog6" uuid="531db50c93a34294be177d62d00c4927"/>
+    <mixBus outputs="analog7" uuid="278947cfe0004bfcbc1a020ded2fed2b"/>
+    <mixBus outputs="analog8" uuid="1974ed8e2f644b9192fddac0b59562ff"/>
+    <mixBus outputs="analog9" uuid="2b16084fb69c465ab6413a3de7566b29"/>
+    <mixBus outputs="analog10" uuid="b94eb462e657499cab124f86ff0d7030"/>
+    <mixBus outputs="analog11" uuid="8e16f23f6c1743be92b997c8ff66fb0b"/>
+    <mixBus outputs="analog12" uuid="5ad44c552f7243658b40357c2c8b289e"/>
+    <mixBus outputs="analog13" uuid="01ad492a230b47a9b40c8a5f68d45d4a"/>
+    <mixBus outputs="analog14" uuid="ac7ddc4a9d1548b49e35887f821cd28c"/>
+    <mixBus outputs="analog15" uuid="e9f6c29b54c44ad481983d0a78898971"/>
+    <mixBus outputs="analog16" uuid="b64fd0c33fd440c2b6a6f75a94b813ee"/>
+  </globalSet>
+  <sessionSet uuid="92e1fcf38e1d43898813238f00cc1e9d" name="New set" volume="1"
+              pan="0.5" mainColour="ff173d27" secondaryColour="6be6e3ff" gradients="0.500000:0.000000:0.715000:0.784000"
+              colour="fff5d852" longDescription="" unfolded="">
+    <drumPads name="snare pads" surfaceType="snare" msgInputs="snare1" activePads="center,edge,stickshot,damped,rim-shoulder,rim-tip"
+              uuid="4ca88aed55d54fac9588b4d1be58912f" pinned="drumPads,mixPanel,childsPanel"
+              unfolded="drumPads,childsPanel" selectedColumn="7" displayedIndices="0"
+              matrix="1,1,0,1,1,0,0,0,1,0/0,0,1,0,0,1,1,0,0,1/0,0,0,0,0,0,0,1,0,0/1,1,0,1,1,0,0,0,1,0"
+              displayFx="0">
+      <noteController uuid="4fe895501bf0444e9f25be74fb55855b" pinned="noteController,mixPanel,childsPanel"
+                      unfolded="noteController,childsPanel" selectedPads="center,edge,cross-stick,rimshot-center,rimshot-edge,rim-tip,rim-shoulder,stickshot,damped,shell"
+                      pitchs="60,64" weights="l:0.5,0.5" mode="timbre" padA="center"
+                      padB="edge" displayFx="0" displayedIndices="0" noteSet="Custom"
+                      inputMin="0.2192223221063614" edgeModeMin="1" inputMax="0.7348856209150327"
+                      muted="0" selected="1">
+        <sampler volume="1.995262265205383" pan="0.5" uuid="08d4d23de2b84c93b75c201d07f5ae80"
+                 pinned="sampler,mixPanel" unfolded="sampler" samplerFile="~/Desktop/Work/Research/Samples/BA1Tom/Snare.wav"
+                 length="88200" samplerate="44100.0" startDisplayedTime="0.0"
+                 endDisplayedTime="1.999977324263039" start="0" stop="88199" gainCached="11.93742179870605"
+                 gain="11.93742179870605" name="Snare" muted="1" selected="1"/>
+        <midiController uuid="380486dc8e99435e9b37ee9110865d52" pinned="midiController"
+                        unfolded="midiController" midiChannel="1" noteLength="100.0"
+                        muted="0" outputs="midi1"/>
+      </noteController>
+      <noteController uuid="ba06e873c8194080a8aaea5b8dd1011b" pinned="noteController,mixPanel,childsPanel"
+                      unfolded="noteController,childsPanel" selectedPads="center,edge,cross-stick,rimshot-center,rimshot-edge,rim-tip,rim-shoulder,stickshot,damped,shell"
+                      pitchs="68" weights="l:1" displayFx="0" displayedIndices="0"
+                      noteSet="Custom" fromNote="60">
+        <midiController uuid="235de4a7cbc84bb9885089e2c60ce764" pinned="midiController"
+                        unfolded="midiController" noteLength="10.0"/>
+      </noteController>
+      <noteController uuid="007d980f5ca64325bf7aaeeefd3cf7ee" pinned="noteController,mixPanel,childsPanel"
+                      unfolded="noteController,childsPanel" selectedPads="center,edge,cross-stick,rimshot-center,rimshot-edge,rim-tip,rim-shoulder,stickshot,damped,shell"
+                      pitchs="70" weights="l:1" noteSet="Custom" displayFx="0" displayedIndices="0">
+        <midiController uuid="11d4305c2c8b452f8f782f4b52af95e0" pinned="midiController"
+                        unfolded="midiController" noteLength="10.0" midiChannel="1"/>
+      </noteController>
+      <midiCCsGenerator uuid="b6f4820124974edb9e02d78d47477735" pinned="midiCCsGenerator"
+                        unfolded="midiCCsGenerator" muted="0" midiChannel="1" msgInputs="">
+        <ccEvent midiCCNum="1" uuid="098fdbd569b5407bad68e9acc7550fd5" displayedAssignment="99ebe19a47104d5fabfe623c1c7b6a60">
+          <assignment name="# value" paramId="midiCC" outputMin="0" outputMax="127.0"
+                      uuid="99ebe19a47104d5fabfe623c1c7b6a60" inputs="here" mode="timbre"
+                      selected="1">
+            <timbre name="# timbre" uuid="3e32ea67fb4a4bf7845d501a5142a0c9" surfaceType="snare"
+                    padA="center" padB="edge"/>
+          </assignment>
+        </ccEvent>
+      </midiCCsGenerator>
+    </drumPads>
+  </sessionSet>
+</session>
