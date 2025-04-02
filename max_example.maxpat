@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 574.0, 759.0 ],
+		"rect" : [ 35.0, 100.0, 445.0, 752.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"floatoutput" : 1,
+					"id" : "obj-6",
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"orientation" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 509.5, 391.5, 153.0, 21.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 285.0, 237.5, 153.0, 21.0 ],
+					"size" : 1.0
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-57",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 907.0, 183.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 283.0, 238.0, 37.0, 20.0 ],
+					"presentation_rect" : [ 106.0, 286.0, 37.0, 20.0 ],
 					"text" : "Port"
 				}
 
@@ -195,7 +212,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-34",
-					"items" : [ "play", ",", "stop" ],
+					"items" : [ "play", ",", "stop", ",", "cc" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -294,8 +311,8 @@
 					"patching_rect" : [ 14.0, 62.0, 474.0, 127.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 9,
-					"presentation_rect" : [ 14.0, 62.0, 474.0, 127.0 ],
-					"text" : "Sensory Percussion OSC Messages take the form:\n\n/obsidian/hwout/midi1 <command> <velocity> <note> <transpose> <channel>\n\n<command> is typically \"play\", \"stop\", or a CC value change\n<velocity> ranges from 0.0 to 1.0\n<note> is a MIDI note number\n<transpose>\n<channel>"
+					"presentation_rect" : [ 14.0, 62.0, 494.0, 127.0 ],
+					"text" : "Sensory Percussion OSC Messages take the form:\n\n/obsidian/hwout/midi1 <command> <velocity> <note> . . . (Other values)\n\n<command> is typically \"play\", \"stop\", or \"cc\"\n<velocity> ranges from 0.0 to 1.0.\n     – If the command is \"cc\", this is the CC value rangine from 0 to 127.\n<note> is a MIDI note number\nOther values include <transpose> and <channel>"
 				}
 
 			}
@@ -333,7 +350,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 35.0, 495.0, 50.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 322.0, 237.0, 50.0, 22.0 ]
+					"presentation_rect" : [ 145.0, 285.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -524,6 +541,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
+					"order" : 1,
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"order" : 0,
 					"source" : [ "obj-40", 0 ]
 				}
 
@@ -548,6 +574,13 @@
 					"destination" : [ "obj-30", 0 ],
 					"order" : 0,
 					"source" : [ "obj-42", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <session version="0.1.9" uuid="2e302d919b834cf18f11835c693084d0" currentSet="92e1fcf38e1d43898813238f00cc1e9d"
-         displayedSet="92e1fcf38e1d43898813238f00cc1e9d" name="ThreeZones"
-         unfolded="footerOpened" displayRear="edit" hwOutputsPanelWidth="419">
+         displayedSet="92e1fcf38e1d43898813238f00cc1e9d" displayRear="edit"
+         unfolded="footerOpened" name="ThreeZones" hwOutputsPanelWidth="419">
   <globalSet colour="ff4eadea" mainColour="ff4e4f7a" secondaryColour="ff666af2"
              fillAll="1" armrecord="1" uuid="04d13434dd20489dbdb9e9b16368c2f0">
     <mixBus outputs="analog1" uuid="f798243d66e942da976c717a24aa0423"/>
@@ -25,37 +25,40 @@
   <sessionSet uuid="92e1fcf38e1d43898813238f00cc1e9d" name="New set" volume="1"
               pan="0.5" mainColour="ff173d27" secondaryColour="6be6e3ff" gradients="0.500000:0.000000:0.715000:0.784000"
               colour="fff5d852" longDescription="" unfolded="">
-    <drumPads name="snare pads" surfaceType="snare" msgInputs="snare1" activePads="center,edge,stickshot,damped,rim-shoulder,rim-tip"
+    <drumPads name="snare pads" surfaceType="snare" msgInputs="snare1" activePads="center,edge,stickshot,damped,rim-shoulder,rim-tip,shell"
               uuid="4ca88aed55d54fac9588b4d1be58912f" pinned="drumPads,mixPanel,childsPanel"
-              unfolded="drumPads,childsPanel" selectedColumn="7" displayedIndices="0"
-              matrix="1,1,0,1,1,0,0,0,1,0/0,0,1,0,0,1,1,0,0,1/0,0,0,0,0,0,0,1,0,0/1,1,0,1,1,0,0,0,1,0"
-              displayFx="0">
+              unfolded="drumPads,childsPanel" selectedColumn="9" displayedIndices="3"
+              matrix="1,1,0,1,1,0,0,0,1,0/0,0,1,0,0,1,1,0,0,0/0,0,0,0,0,0,0,1,0,0/0,0,0,0,0,0,0,0,0,1/1,1,0,1,1,0,0,0,1,0"
+              displayFx="1" followTriggered="0">
       <noteController uuid="4fe895501bf0444e9f25be74fb55855b" pinned="noteController,mixPanel,childsPanel"
                       unfolded="noteController,childsPanel" selectedPads="center,edge,cross-stick,rimshot-center,rimshot-edge,rim-tip,rim-shoulder,stickshot,damped,shell"
-                      pitchs="60,64" weights="l:0.5,0.5" mode="timbre" padA="center"
-                      padB="edge" displayFx="0" displayedIndices="0" noteSet="Custom"
-                      inputMin="0.2192223221063614" edgeModeMin="1" inputMax="0.7348856209150327"
-                      muted="0" selected="1">
-        <sampler volume="1.995262265205383" pan="0.5" uuid="08d4d23de2b84c93b75c201d07f5ae80"
-                 pinned="sampler,mixPanel" unfolded="sampler" samplerFile="~/Desktop/Work/Research/Samples/BA1Tom/Snare.wav"
-                 length="88200" samplerate="44100.0" startDisplayedTime="0.0"
-                 endDisplayedTime="1.999977324263039" start="0" stop="88199" gainCached="11.93742179870605"
-                 gain="11.93742179870605" name="Snare" muted="1" selected="1"/>
+                      pitchs="60,62,64" weights="l:0.333333,0.333333,0.333333" mode="timbre"
+                      padA="center" padB="edge" displayFx="0" displayedIndices="0"
+                      noteSet="Custom" inputMin="0.2192223221063614" edgeModeMin="1"
+                      inputMax="0.7348856209150327" muted="0">
         <midiController uuid="380486dc8e99435e9b37ee9110865d52" pinned="midiController"
                         unfolded="midiController" midiChannel="1" noteLength="100.0"
-                        muted="0" outputs="midi1"/>
+                        muted="0" outputs="midi1" selected="1"/>
       </noteController>
       <noteController uuid="ba06e873c8194080a8aaea5b8dd1011b" pinned="noteController,mixPanel,childsPanel"
                       unfolded="noteController,childsPanel" selectedPads="center,edge,cross-stick,rimshot-center,rimshot-edge,rim-tip,rim-shoulder,stickshot,damped,shell"
-                      pitchs="68" weights="l:1" displayFx="0" displayedIndices="0"
-                      noteSet="Custom" fromNote="60">
+                      pitchs="67" weights="l:1" displayFx="0" displayedIndices="0"
+                      noteSet="Custom" fromNote="60" name="Rims (G)">
         <midiController uuid="235de4a7cbc84bb9885089e2c60ce764" pinned="midiController"
                         unfolded="midiController" noteLength="10.0"/>
       </noteController>
       <noteController uuid="007d980f5ca64325bf7aaeeefd3cf7ee" pinned="noteController,mixPanel,childsPanel"
                       unfolded="noteController,childsPanel" selectedPads="center,edge,cross-stick,rimshot-center,rimshot-edge,rim-tip,rim-shoulder,stickshot,damped,shell"
-                      pitchs="70" weights="l:1" noteSet="Custom" displayFx="0" displayedIndices="0">
+                      pitchs="69" weights="l:1" noteSet="Custom" displayFx="0" displayedIndices="0"
+                      name="Stick Shot (A)">
         <midiController uuid="11d4305c2c8b452f8f782f4b52af95e0" pinned="midiController"
+                        unfolded="midiController" noteLength="10.0" midiChannel="1"/>
+      </noteController>
+      <noteController uuid="75267cfc62bd44a1a6346aa14fec94b1" pinned="noteController,mixPanel,childsPanel"
+                      unfolded="noteController,childsPanel" selectedPads="center,edge,cross-stick,rimshot-center,rimshot-edge,rim-tip,rim-shoulder,stickshot,damped,shell"
+                      pitchs="71" weights="l:1" noteSet="Custom" displayFx="0" displayedIndices="0"
+                      name="Shell (B)">
+        <midiController uuid="90d4d0c9a32540ca8522aa7aca5ae6b0" pinned="midiController"
                         unfolded="midiController" noteLength="10.0" midiChannel="1"/>
       </noteController>
       <midiCCsGenerator uuid="b6f4820124974edb9e02d78d47477735" pinned="midiCCsGenerator"
