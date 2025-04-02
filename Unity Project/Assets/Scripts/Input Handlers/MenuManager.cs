@@ -18,6 +18,8 @@ public class MenuManager : InputHandler_Generic
     {
         OSCSetup(); // (See note in InputHandler_Generic about OSCSetup)
         GoToPage(0);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(main_firstSelectedButton);
     }
     
     public void GoToPage(int index) {
@@ -44,12 +46,16 @@ public class MenuManager : InputHandler_Generic
     protected override void InputHandler(string command, float velocity, int note) {
         if (command.Equals("play")) {
             Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+            TMP_InputField field = EventSystem.current.currentSelectedGameObject.GetComponent<TMP_InputField>();
             //Debug.Log(velocity);
             //Debug.Log(button);
             if (velocity > 0.5f) {
                 // The user wants to input a button press with the drum
                 if (button != null) {
                     button.onClick.Invoke();
+                }
+                if (field != null) {
+                    field.onSubmit.Invoke(field.text);
                 }
             }
             else {
