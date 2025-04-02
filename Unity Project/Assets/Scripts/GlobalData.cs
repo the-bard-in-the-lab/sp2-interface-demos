@@ -8,7 +8,7 @@ public class GlobalData : MonoBehaviour
     public static int port = 9001;
     private static int defaultPort = 9001;
     public static string OSCAddress = "/obsidian/hwout/midi1";
-    private static string defaultAddress = "/obsidian/hwout/midi1";
+    //private static string defaultAddress = "/obsidian/hwout/midi1";
     public static OSC osc;
     
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using System;
 using System.Linq;
 
-public class TableOfTime : MonoBehaviour
+public class TableOfTime : InputHandler_Generic
 {
     public TextMeshProUGUI number_text;
     public Slider tempo_slider;
@@ -22,7 +22,6 @@ public class TableOfTime : MonoBehaviour
     double killTime = 3d;
     double referenceTime;
     double buffer = 1.5d;
-    public OSC osc;
     public GameObject snareNote;
     int subdivision = 1;
     int next_subdivision = 1;
@@ -36,7 +35,7 @@ public class TableOfTime : MonoBehaviour
     
     void Start()
     {
-        osc.SetAddressHandler("/obsidian/hwout/midi1", HitHandler);
+        OSCSetup(); // (See note in InputHandler_Generic about OSCSetup)
         
         tempo = (int) tempo_slider.value;
         ioi = 60d / tempo; // Converts from BPM to interonset interval (in seconds)
@@ -121,35 +120,27 @@ public class TableOfTime : MonoBehaviour
         pingEventTimes.Add(time);
         myPing.GetComponent<MetPingData>().SetPing(ping, time);
     }
-    void HitHandler(OscMessage message) {
-        double myTime = AudioSettings.dspTime;
-        string[] msg = message.ToString().Split(" ");
-        if (msg[1] == "play") {
-            float vel = float.Parse(msg[2]);
-            
-            // This is for in-software audio for the instrument. It is currently disabled because of latency.
-            // GameObject myNote = Instantiate(snareNote);
-            // myNote.transform.parent = transform;
-            // myNote.GetComponent<AudioSource>().volume = vel * 4f;
-            // myNote.GetComponent<AudioSource>().PlayScheduled(AudioSettings.dspTime); // This is bad practice lol
-            // //Debug.Log(vel);
-            // Destroy(myNote, (float) killTime);
 
-
-            // How close are we?
-            double diff = referenceTime - (myTime - latency); // This order because referenceTime is always in the future
-            double howClose = diff / (ioi / subdivision) % 1; // %1 is cursed as hell but it does work sooooooo
-            if (howClose < pctError || howClose > 1 - pctError) {
-                //Good job
-                Debug.Log("Good job.");
-            }
-            else {
-                Debug.Log("You suck lol");
-            }
-            if (howClose > 0.5) {
-                howClose = howClose - 1;
-            }
-            tendencyOrb.GetComponent<TendencyController>().newHit(-howClose);
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            InputHandler("play", 0.5f, 60);
         }
+    }
+    protected override void InputHandler(string command, float velocity, int note) {
+        double myTime = AudioSettings.dspTime;
+        double diff = referenceTime - (myTime - latency); // This order because referenceTime is always in the future
+        double howClose = diff / (ioi / subdivision) % 1; // %1 is cursed as hell but it does work sooooooo
+        if (howClose < pctError || howClose > 1 - pctError) {
+            //Good job
+            Debug.Log("Good job.");
+        }
+        else {
+            Debug.Log("You suck lol");
+        }
+        if (howClose > 0.5) {
+            howClose = howClose - 1;
+        }
+        tendencyOrb.GetComponent<TendencyController>().newHit(-howClose);
     }
 }
