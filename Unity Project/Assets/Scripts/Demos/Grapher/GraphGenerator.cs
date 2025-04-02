@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GraphGenerator : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GraphGenerator : MonoBehaviour
     public double yMax = 50f;    
     private RectTransform myRectTransform;
     private LineRendererUI myRenderer;
+    public float lineWidth = 2f;
+    public Slider widthController;
     public List<Vector2> myCoords = new List<Vector2>{
             new Vector2(0, 0),
             new Vector2(100, 100),
@@ -23,6 +26,11 @@ public class GraphGenerator : MonoBehaviour
     {
         myRectTransform = GetComponent<RectTransform>();
         myRenderer = GetComponent<LineRendererUI>();
+        widthController.value = lineWidth;
+    }
+    public void UpdateWidth() {
+        lineWidth = widthController.value;
+        myRenderer.SetLineWidth(lineWidth);
     }
 
     public void DrawGraph(List<Vector2> points) {

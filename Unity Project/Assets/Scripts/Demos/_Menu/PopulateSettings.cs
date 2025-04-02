@@ -7,7 +7,6 @@ public class PopulateSettings : MonoBehaviour
 {
     [SerializeField] private TMP_InputField portField;
     [SerializeField] private TMP_InputField oscAddressField;
-    // Start is called before the first frame update
     void OnEnable()
     {
         portField.text = GlobalData.port.ToString();

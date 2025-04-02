@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 public class MenuManager : InputHandler_Generic
 {
     [SerializeField] private Canvas canvas;
@@ -15,7 +16,7 @@ public class MenuManager : InputHandler_Generic
 
     void Start()
     {
-        OSCSetup();
+        OSCSetup(); // (See note in InputHandler_Generic about OSCSetup)
         GoToPage(0);
     }
     
@@ -24,8 +25,10 @@ public class MenuManager : InputHandler_Generic
             menuScreens[i].SetActive(false);
         }
         menuScreens[index].SetActive(true);
+
+        // Set the selected UI object (for keyboard and/or drum-based navigation)
         EventSystem.current.SetSelectedGameObject(null);
-        switch (index){
+        switch (index) {
             case 0:
                 EventSystem.current.SetSelectedGameObject(settingsButton);
                 break;
@@ -40,16 +43,17 @@ public class MenuManager : InputHandler_Generic
 
     protected override void InputHandler(string command, float velocity, int note) {
         if (command.Equals("play")) {
-            //Debug.Log("Message heard by Menu Manager");
             Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
-            Debug.Log(velocity);
-            Debug.Log(button);
+            //Debug.Log(velocity);
+            //Debug.Log(button);
             if (velocity > 0.5f) {
+                // The user wants to input a button press with the drum
                 if (button != null) {
                     button.onClick.Invoke();
                 }
             }
             else {
+                // The user wants to advance to the next item with the drum
                 GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
                 //Debug.Log($"nextSelected: {nextSelected}");
                 EventSystem.current.SetSelectedGameObject(null);

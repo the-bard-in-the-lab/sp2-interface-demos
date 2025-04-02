@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class GlobalData : MonoBehaviour
 {
@@ -40,6 +38,7 @@ public class GlobalData : MonoBehaviour
         // OSCAddress = defaultAddress;
     }
 
+    // These functions are for updating Global Data values from a text field
     public void setAddressFromField() {
         setOSCAddress(GetComponent<TMP_InputField>().text);
     }
@@ -53,5 +52,4 @@ public class GlobalData : MonoBehaviour
         Debug.Log($"Found object {osc}");
         return osc;
     }
-
 }
