@@ -4,6 +4,8 @@
 
 **VESPer** stands for Visual Expression with Sensory Percussion. It was developed for the paper Exploring Real Time Interfaces with Sensory Percussion and is intended for use alongside [EVANS Hybrid Sensory Percussion](https://sunhou.se/sensorypercussion) by Sunhouse and EVANS.
 
+This repository corresponds with the paper *Exploring Real-Time Interfaces With Sensory Percussion*, which appears in the procedings of [NIME](https://nime.org/) 2026.
+
 ## Requirements
 
 The Unity project was original created in version `2022.3.25f1`. It has since been updated to a Unity 6 version following security patches. You will need to be able to open and run Unity projects to use this repository.
@@ -88,7 +90,7 @@ The **Table of Time** is based on a popular exercises and challenges players to 
 
 ## Credits
 
-(Authorship has been redacted for anonymous peer review.)
+This repository is maintained by [Graham Lazorchak](https://www.grahamlazorchak.com/) in collaboration with [Prof. Emily Q. Wang](https://greenteawarrior.github.io/) and the [CARDS Lab](https://cards-hci.github.io/).
 
 ### Code
 
